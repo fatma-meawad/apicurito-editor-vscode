@@ -19,7 +19,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '20'
 
       - name: Install dependencies
         run: |
@@ -27,7 +27,7 @@ jobs:
           npm install -g vsce
 
       - name: Build the extension
-        run: npm install
+        run: npm run build
 
       - name: Package the extension
         run: vsce package
