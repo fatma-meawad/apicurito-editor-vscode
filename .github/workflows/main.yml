@@ -21,14 +21,15 @@ jobs:
         with:
           node-version: '20' # Ensure compatibility with newer syntax
 
+      - name: Set OpenSSL Legacy Provider
+        run: export NODE_OPTIONS=--openssl-legacy-provider
+        
       - name: Install dependencies with Yarn
         run: yarn install
 
       - name: Compile the extension
         run: yarn compile
 
-      - name: Set OpenSSL Legacy Provider
-        run: export NODE_OPTIONS=--openssl-legacy-provider
         
       - name: Package the extension
         run: npx vsce package
