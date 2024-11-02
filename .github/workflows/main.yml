@@ -27,7 +27,7 @@ jobs:
           npm install -g vsce
 
       - name: Build the extension
-        run: npm run build
+        run: npm install
 
       - name: Package the extension
         run: vsce package
