@@ -14,10 +14,10 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '14'
 
@@ -34,7 +34,7 @@ jobs:
         shell: bash
 
       - name: Upload VSIX artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: apicurito-editor-vscode
           path: '*.vsix'
