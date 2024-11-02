@@ -19,18 +19,16 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '20' # Ensure compatibility with newer syntax
 
-      - name: Install dependencies
-        run: |
-          npm install
-          npm install -g vsce
+      - name: Install dependencies with Yarn
+        run: yarn install
 
-      - name: Build the extension
-        run: npm run build
+      - name: Compile the extension
+        run: yarn compile
 
       - name: Package the extension
-        run: vsce package
+        run: npx vsce package
         shell: bash
 
       - name: Upload VSIX artifact
