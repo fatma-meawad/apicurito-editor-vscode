@@ -27,6 +27,9 @@ jobs:
       - name: Compile the extension
         run: yarn compile
 
+      - name: Set OpenSSL Legacy Provider
+        run: export NODE_OPTIONS=--openssl-legacy-provider
+        
       - name: Package the extension
         run: npx vsce package
         shell: bash
